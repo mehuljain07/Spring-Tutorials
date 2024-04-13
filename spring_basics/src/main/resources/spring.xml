@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- <bean id="alien" class="com.example.demo.Alien" autowire="byName"> -->
+    <bean id="alien" class="com.example.demo.Alien" autowire="byType">
+    <!-- constructor injection -->
+        <!-- <constructor-arg value="12"></constructor-arg> -->
+
+    <!-- setter injection -->
+    <!-- property is set using setter and getter method. the name of the method should be get<property_name>. For e.g. getTech or gettech -->
+        <property name="tech" value="Spring"></property>
+        <!-- We can skip the property with autowire. Otherwise, we need to pass -->
+        <!-- <property name="laptop" ref="laptop"></property>  -->
+    </bean>
+
+    <!-- <bean id="laptop" class="com.example.demo.Laptop"></bean> used for autowire="default" -->
+    <!-- <bean id="com" class="com.example.demo.Laptop"></bean>  used for autowire="byName"  -->
+    <bean id="com" class="com.example.demo.Laptop" primary="true"></bean> <!-- used for autowire="byType" -->
+    <bean id="desktop" class="com.example.demo.Desktop"></bean> <!-- used for autowire="byType" -->
+</beans>

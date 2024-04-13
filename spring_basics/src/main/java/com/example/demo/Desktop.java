@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 // @Component("lap1")
 @Component
-public class Laptop implements Computer{
+public class Desktop implements Computer{
     private int id;
     private String brand;
     public int getId() {
@@ -21,7 +21,7 @@ public class Laptop implements Computer{
     }
 
     public void compile(){
-        System.out.println("Compiliing on a laptop");
+        System.out.println("Compiliing on a Desktop");
     }
     
 

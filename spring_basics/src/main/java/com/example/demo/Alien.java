@@ -1,7 +1,6 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+// import org.springframework.beans.factory.annotation.Qualifier;
 // import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,24 +8,35 @@ import org.springframework.stereotype.Component;
 // @Scope(value = "prototype")
 public class Alien {
     private int id;
+    private int age;
     private String name;
     private String tech;
-    @Autowired
-    @Qualifier("lap1")
-    private Laptop laptop;
-
-    public Laptop getLaptop() {
-        return laptop;
+    // @Qualifier("lap1")
+    private Computer com;
+    public int getAge() {
+        return age;
     }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    public Computer getCom() {
+        return this.com;
+    }
+
+    public void setCom(Computer com) {
+        this.com = com;
     }
 
     public Alien(){
         super();
         System.out.println("Object Created");
     }
+// named constructor
+    // public Alien(int age){
+    //     this.age = age;
+    // }
 
     public int getId(){
         return id;
@@ -51,8 +61,9 @@ public class Alien {
     }
 
     public void show(){
-        System.out.println("In show");
-        laptop.compile();
+        // System.out.println(this.tech);
+        System.out.println(this.age);
+        com.compile();
     }
 
 }
