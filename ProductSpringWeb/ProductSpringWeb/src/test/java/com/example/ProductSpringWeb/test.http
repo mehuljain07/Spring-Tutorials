@@ -1,0 +1,9 @@
+POST http://localhost:8080/product
+Content-Type: application/json
+
+{
+    "name": "Vaku Wireless charger 3 in 1",
+    "type": "Charger",
+    "place": "Bedroom table",
+    "warranty": "2022"
+}
