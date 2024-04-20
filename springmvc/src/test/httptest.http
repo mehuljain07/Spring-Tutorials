@@ -1,0 +1,15 @@
+
+POST http://localhost:8080/alien HTTP/1.1
+content-type: application/json
+{
+    "aid": "103",
+    "aname": "Harsh"
+}
+
+###
+GET http://localhost:8080/aliens HTTP/1.1
+Accept: application/xml
+
+###
+
+

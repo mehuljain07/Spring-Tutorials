@@ -1,8 +1,17 @@
 package com.example.springmvc.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Alien {
+	@Id
     private int aid;
     private String aname;
+    
+    public Alien() {
+		// TODO Auto-generated constructor stub
+	}
     public int getAid() {
         return aid;
     }
