@@ -14,9 +14,11 @@
        </form>
 
        <form action="addAlien">
-        Enter your id : <input type="number" name="aid"><br>
-        Enter your name : <input type="text" name="aname"><br>
-        <button type="submit">Submit</button>
-   </form>
+	        Enter your id : <input type="number" name="aid"><br>
+	        Enter your name : <input type="text" name="aname"><br>
+	        <button type="submit">Submit</button>
+   		</form>
+   		
+   		<a href="/logout-success">logout</a>
     </body>
 </html>

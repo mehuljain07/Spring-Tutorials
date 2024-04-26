@@ -1,18 +1,10 @@
 package com.example.springmvc;
 
 
-import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+//import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.example.springmvc.model.Alien;
 
 // import jakarta.servlet.http.HttpServletRequest;
 // import jakarta.servlet.http.HttpSession;
@@ -21,15 +13,26 @@ import com.example.springmvc.model.Alien;
 @Controller
 public class HomeController {
     
-	@Autowired
-	AlienRepo repo;
+//	@Autowired
+//	AlienRepo repo;
 	
 	@GetMapping("/")
     public String home()
     {
-        System.out.println("Home Page requested...");
+        
         return "index"; //metadata for file path and extension is stored in application.properties
     }
+	
+	@GetMapping("/login")
+	public String loginPage() {
+//		System.out.println("Login page requested");
+		return "login";
+	}
+	
+	@GetMapping("/logout-success")
+	public String logoutPage() {
+		return "logout";
+	}
 
 //    @PostMapping("/add")
 //    // 3 ways to process this request
@@ -77,15 +80,15 @@ public class HomeController {
     //     m.addAttribute("alien", a);
     //     return "result";
     // }
-    @PostMapping("addAlien")
-    public String addAlien(@ModelAttribute Alien alien){
-        // m.addAttribute("alien", a);
-        return "result";
-    }
-    
-    @GetMapping("getAliens")
-    public String getAliens(Model m){
-    	m.addAttribute("alien", repo.findAll());
-    	return "result";
-    }
+//    @PostMapping("addAlien")
+//    public String addAlien(@ModelAttribute Alien alien){
+//        // m.addAttribute("alien", a);
+//        return "result";
+//    }
+//    
+//    @GetMapping("getAliens")
+//    public String getAliens(Model m){
+//    	m.addAttribute("alien", repo.findAll());
+//    	return "result";
+//    }
 }
